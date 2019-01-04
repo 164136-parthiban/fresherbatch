@@ -10,11 +10,11 @@ h2, h3 {
   font-weight: lighter;
 }
 body {
-  background-color: darkblue;
+  background-color: rgb(176, 176, 192);
   margin: 2em;
 }
 body, input[text], button {
-  color: #888;
+  color: rgb(67, 19, 129);
   font-family: Cambria, Georgia;
 }
 a {
