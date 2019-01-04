@@ -15,7 +15,7 @@ export const routing = RouterModule.forRoot(routes);
 @NgModule({
   declarations: [HomeComponent, UserComponent
     ],
-  imports: [BrowserModule,
+  imports: [BrowserModule,RouterModule.forRoot(routes),
     CommonModule
   ],
   exports: [ RouterModule ],
