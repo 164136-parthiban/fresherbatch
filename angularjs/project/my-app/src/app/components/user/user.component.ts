@@ -56,9 +56,15 @@ export class UserComponent implements OnInit {
         this.hobbies.splice(index,1);
       }
     }
-    
-
-
   }
+    	  convertToUpperCase() {
+          this.name=this.name.toUpperCase();
+      	  }
+    	
+      	  convertToLowerCase() {
+    	    this.name=this.name.toLowerCase();
+        }
+      
+
 
 }

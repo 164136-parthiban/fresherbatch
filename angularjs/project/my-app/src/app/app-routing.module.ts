@@ -1,30 +1,20 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent }      from './components/home/home.component';
-import { UserComponent }      from './components/user/user.component';
-import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { Routes, RouterModule } from '@angular/router';
+import { HomeComponent } from './components/home/home.component';
+import { UserDetailsComponent } from './components/user-details/user-details.component';
 
-const routes: Routes = [
-  { path: 'home', component: HomeComponent }
+
+
+const routes : Routes = [
+  { path : '', component : HomeComponent},
+  { path : 'user-details/:name', component : UserDetailsComponent}
 ];
-
+  
 export const routing = RouterModule.forRoot(routes);
 
+
 @NgModule({
-  declarations: [HomeComponent, UserComponent
-    ],
-  imports: [BrowserModule,RouterModule.forRoot(routes),
-    CommonModule
-  ],
-  exports: [ RouterModule ],
-  providers: [ { provide: LocationStrategy, useClass: HashLocationStrategy} ]
-
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
 })
-
-
-
-
-
 export class AppRoutingModule { }
