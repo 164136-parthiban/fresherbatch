@@ -59,10 +59,12 @@ export class UserComponent implements OnInit {
   }
     	  convertToUpperCase() {
           this.name=this.name.toUpperCase();
+          this.email=this.email.toUpperCase();
       	  }
     	
       	  convertToLowerCase() {
-    	    this.name=this.name.toLowerCase();
+          this.name=this.name.toLowerCase();
+          this.email=this.email.toLowerCase();
         }
       
 
