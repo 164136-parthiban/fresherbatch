@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title> slideshow </title>
+</head>
+
+<body>
+
+<h2>my slideshow</h2>
+
+<div align="center">
+<img class="mySlides" src="img1.jpg" width="400" height=300">
+<img class="mySlides" src="img2.jpg" width="400" height=300">
+<img class="mySlides" src="img3.jpg" width="400" height=300">
+<img class="mySlides" src="img4.jpg" width="400" height=300">
+<img class="mySlides" src="img5.jpg" width="400" height=300">
+<img class="mySlides" src="img6.jpg" width="400" height=300">
+<br>
+<br>
+
+<button  onclick="change(-1)">prev</button>
+<button  onclick="change(1)">next</button>
+
+</div>
+<br>
+
+<script>
+var slideIndex = 1;
+show(slideIndex);
+
+function change(n) {
+  show(slideIndex += n);
+}
+
+function show(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) 
+{
+slideIndex = 1
+}    
+  if (n < 1) 
+{
+slideIndex = x.length
+};
+  for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";  
+  }
+
+  x[slideIndex-1].style.display = "block";  
+}
+</script>
+
+</body>
+</html> 

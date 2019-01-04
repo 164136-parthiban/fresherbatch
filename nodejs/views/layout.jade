@@ -1,0 +1,45 @@
+doctype html
+html(lang='en')
+  head
+    title pc repair
+    link(href='/stylesheets/bootstrap.css', rel='stylesheet')
+    style.
+      .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      }
+      @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+      }
+      }
+    // Custom styles for this template
+    link(href='jumbotron.css', rel='stylesheet')
+  body
+    nav.navbar.navbar-expand-md.bg-dark
+      a.navbar-brand(href='#') pc repair 
+      button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarsExampleDefault', aria-controls='navbarsExampleDefault', aria-expanded='false', aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      #navbarsExampleDefault.collapse.navbar-collapse
+        ul.navbar-nav.mr-auto
+          li.nav-item.active
+            a.nav-link(href='/')
+              | Home 
+              span.sr-only (current)
+          li.nav-item
+            a.nav-link(href='/about') about
+          li.nav-item
+            a.nav-link(href='/contact') contact
+          li.nav-item.dropdown
+            a#dropdown01.nav-link.dropdown-toggle(href='#', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false') Dropdown
+            .dropdown-menu(aria-labelledby='dropdown01')
+              a.dropdown-item(href='#') Action
+              a.dropdown-item(href='#') Another action
+              a.dropdown-item(href='#') Something else here
+    
+     .container
+      block content
+    hr
+     
+    footer.container
+     p(class='text-center') © Company 2017-2018

@@ -1,0 +1,23 @@
+emp.add(new Emplo(121,"Sneha",10,"Cloud",2500,"Developer"));
+        emp.add(new Emplo(141,"Sai",20,"BIU",2200,"Techie"));
+        emp.add(new Emplo(112,"Yashu",10,"Cloud",2300,"Analyst"));
+        emp.add(new Emplo(132,"Swathi",30,"IMS",2500,"Analyst"));
+        emp.add(new Emplo(113,"Sahana",10,"Cloud",2000,"Clerk"));
+        emp.add(new Emplo(124,"Zehara",30,"IMS",3000,"President"));
+        emp.add(new Emplo(176,"Shruthi",20,"BIU",3000,"Manager"));
+        emp.add(new Emplo(144,"Siya",30,"IMS",1500,"Salesman"));
+        emp.add(new Emplo(198,"Tanya",20,"BIU",1500,"salesman"));
+        emp.add(new Emplo(198,"Varshitha",20,"BIU",1200,"Clerk"));
+
+
+
+int emp_id;
+	String empname;
+	int Deptno;
+	String deptname;
+	int salary;
+	String position;
+	
+	
+	public Emplo(int emp_id, String empname, int deptno, String deptname,
+			int salary, String position) {

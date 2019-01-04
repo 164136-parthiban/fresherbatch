@@ -1,0 +1,50 @@
+<!DOCTYPE html><html><head>
+<meta charset="utf-8">
+<title>coffee !!!</title>
+</head>
+<link rel='stylesheet' type = 'text/css' href = 'salesApp.css'>
+<body>
+	<H2>We sell various Coffee Types:</H2>
+	
+	<OL>
+	<H3><li>REGULAR</H3></li>
+	<H3><li>DECAF<H3></li>
+	<H3><li>MOCHA</H3></li>
+	<OL>
+<div name='container'>
+	<form name='calc' >
+
+	<h1>Coffee Lovers</h1>
+	
+	<table name ='coffee' id='cid'>
+	<tr>
+	<td>Name : </td>
+	<td><input type = 'text' name = 'userName' id ='uid' required/><br></td>
+	</tr>
+	
+	<tr>
+	<td>Contact Info. : </td>
+	<td><input type = 'number' name = 'userNum' id ='uNum'required/><br><br></td>
+	</tr>
+	
+	<tr>
+	<td rowspan='2'><button onclick='getOrder(); return false;'>Get All Coffees Here!</button> <!--why return false--><br></td>
+	</tr>
+	
+</table>
+	</form></div>
+	<p id = 'd'></p>
+	<p id = 'de'></p>
+	
+<script>
+
+function getOrder()
+{
+var name = document.calc.userName.value;
+var contact = document.calc.userNum.value;
+var window.prompt("",);
+}
+
+</script>
+</body>
+</html>

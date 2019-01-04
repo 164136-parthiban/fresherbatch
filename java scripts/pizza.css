@@ -1,0 +1,37 @@
+body{
+background-color:#eee;
+font-size: 80%;
+font-family: Arial;
+margin: 20px;
+}
+form
+{
+width=80%;
+background-color=red;
+}	
+
+th{
+	background-color:red;
+	color: white;	
+}
+
+.intab{
+	width : 600px;
+}
+
+table, th, td{
+	
+	border : 1px double grey;
+	width=80%;
+	
+}
+	
+.summary tr:nth-child(odd) 
+{
+	background: #eee;
+}
+
+.summary tr:nth-child(even)
+ {
+	background: white;
+ }

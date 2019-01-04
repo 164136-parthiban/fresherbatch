@@ -1,0 +1,86 @@
+load(
+    "@build_bazel_rules_nodejs//:defs.bzl",
+    "jasmine_node_test",
+    "node_modules_filegroup",
+    "nodejs_binary",
+    "npm_package",
+)
+load("@build_bazel_rules_typescript//:defs.bzl", "ts_library")
+
+exports_files(["bin/ts-api-guardian"])
+
+ts_library(
+    name = "lib",
+    srcs = glob(["lib/*.ts"]),
+    module_name = "ts-api-guardian",
+    node_modules = "@ts-api-guardian_deps//typescript:typescript__typings",
+    tsconfig = "//tools:tsconfig.json",
+    visibility = ["//visibility:public"],
+    deps = [
+        "@ts-api-guardian_deps//@types/diff",
+        "@ts-api-guardian_deps//@types/minimist",
+        "@ts-api-guardian_deps//@types/node",
+        "@ts-api-guardian_deps//diff",
+        "@ts-api-guardian_deps//minimist",
+        "@ts-api-guardian_deps//typescript",
+    ],
+)
+
+# Copy Angular's license to govern ts-api-guardian as well.
+# We use a genrule to put it in this package, so it will be in the right root directory.
+genrule(
+    name = "license",
+    srcs = ["//:LICENSE"],
+    outs = ["LICENSE"],
+    cmd = "cp $< $@",
+)
+
+npm_package(
+    name = "ts-api-guardian",
+    srcs = [
+        "README.md",
+        "bin/ts-api-guardian",
+        "package.json",
+    ],
+    deps = [
+        ":lib",
+        ":license",
+    ],
+)
+
+#######################################3
+# Tests for this package
+
+ts_library(
+    name = "test_lib",
+    testonly = True,
+    srcs = glob(["test/*.ts"]),
+    node_modules = "@ts-api-guardian_deps//typescript:typescript__typings",
+    tsconfig = "//tools:tsconfig-test",
+    deps = [
+        ":lib",
+        "@ts-api-guardian_deps//@types/chai",
+        "@ts-api-guardian_deps//@types/jasmine",
+        "@ts-api-guardian_deps//@types/node",
+        "@ts-api-guardian_deps//chai",
+        "@ts-api-guardian_deps//jasmine",
+        "@ts-api-guardian_deps//typescript",
+    ],
+)
+
+jasmine_node_test(
+    name = "tests",
+    srcs = [":test_lib"],
+    bootstrap = ["angular/tools/ts-api-guardian/test/bootstrap.js"],
+    data = glob([
+        "test/fixtures/*.ts",
+        "test/fixtures/*.patch",
+    ]) + [
+        ":ts-api-guardian",
+        "@ts-api-guardian_deps//chalk",
+        # TODO: remove this once the boostrap.js workaround has been removed.
+        ":package.json",
+    ],
+    node_modules = "@ts-api-guardian_deps//typescript:typescript__typings",
+    tags = ["local"],
+)

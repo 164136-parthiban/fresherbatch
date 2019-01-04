@@ -1,0 +1,13 @@
+@charset "ISO-8859-1";
+.images{
+	
+	padding-bottom:0%;
+	height: 10%;	
+}
+.myslides{
+	height : 10%;
+}
+.column {
+  float: left;
+  width: 33.33%;
+}

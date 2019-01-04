@@ -1,0 +1,7 @@
+@CHARSET "ISO-8859-1";
+table{
+	width:100%;
+	align:center;
+	border-style:inherit;
+	table-layout: fixed;
+}

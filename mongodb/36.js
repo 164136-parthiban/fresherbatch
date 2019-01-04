@@ -1,0 +1,1 @@
+db.addresses.find({cuisine:{$ne:"American"}},{grades :{ $elemMatch:{"score":{$gt : 70}}}},{"address.coord":{$elemMatch:{"0":{$lt:-65.754168}}}}).pretty();

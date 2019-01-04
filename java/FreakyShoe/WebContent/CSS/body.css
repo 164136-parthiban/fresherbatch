@@ -1,0 +1,48 @@
+@charset "ISO-8859-1";
+.images{
+	border-style:inherit;
+	padding-bottom:0%;
+	height: 10%;
+	position: relative;
+}
+.myslides{
+	border-spacing:inherit;
+	height : 10%;
+	position: fixed;
+}
+.column {
+  
+  float: left;
+  width: 33.33%;
+  position: relative;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+a
+{
+	font-style:italic;
+	font-size:medium;
+	font-weight: bold;
+	font-variant: small-caps;
+}
+
+a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+
+#rcorners1 {
+  border-radius: 25px;
+  background: #73AD21;
+  padding: 20px; 
+  width: 200px;
+  height: 150px; 
+}
+

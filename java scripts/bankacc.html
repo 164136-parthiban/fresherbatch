@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title> Bank Account Details </title>
+
+</head>
+
+<body>
+
+<script>
+
+
+		  
+var acc =(function(){
+
+          var cusName;
+          var accBal=20000;
+		  var accNum=123456;
+		  
+		  
+
+ var withdraw=function()
+ {
+ var withdrawAmt=prompt("enter the withdraw amt","enter");
+ document.write("<br/>amount is withdrawn is "+withdrawAmt);
+  
+} 
+
+var deposit= function()
+{
+    
+    var depositAmt=prompt("enter the deposit amt","enter");
+   
+	document.write("<br/>amount is deposited is "+depositAmt);
+    
+}
+
+accBal=parseInt(accBal + deposit.depositAmt - withdraw.withdrawAmt);
+
+ var print= function()
+{
+
+    document.write("<br/>customer: "+acc.cusName);
+	document.write("<br/> account balance is "+updatedBal);
+  
+}
+
+return{
+cusName:"parthiban",
+withdraw:withdraw,
+deposit:deposit,
+print:print
+
+};
+
+})();
+
+acc.withdraw();
+acc.deposit();
+acc.print();
+
+</script>
+
+
+</body>
+</html>
+
+   

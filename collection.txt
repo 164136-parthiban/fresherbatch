@@ -1,0 +1,105 @@
+Collection : Root interface with basic methods like add(), remove(), 
+             contains(), isEmpty(), addAll(), ... etc.
+ 
+Set : Doesn't allow duplicates. Example implementations of Set 
+      interface are HashSet (Hashing based) and TreeSet (balanced
+      BST based). Note that TreeSet implements SortedSet.
+
+List : Can contain duplicates and elements are ordered. Example
+       implementations are LinkedList (linked list based) and
+       ArrayList (dynamic array based)
+
+Queue : Typically order elements in FIFO order except exceptions
+        like PriorityQueue.  
+
+Deque : Elements can be inserted and removed at both ends. Allows
+        both LIFO and FIFO. 
+
+Map : Contains Key value pairs. Doesn't allow duplicates.  Example
+      implementation are HashMap and TreeMap. 
+      TreeMap implements SortedMap.        
+
+The difference between Set and Map interface is that in ,Set we 
+have only keys, whereas in Map, we have key, value pairs.
+
+
+
+ArrayList	LinkedList
+1) ArrayList internally uses a dynamic array to store the elements.	LinkedList internally uses a doubly linked list to store the elements.
+2) Manipulation with ArrayList is slow because it internally uses an array. If any element is removed from the array, all the bits are shifted in memory.	Manipulation with LinkedList is faster than ArrayList because it uses a doubly linked list, so no bit shifting is required in memory.
+3) An ArrayList class can act as a list only because it implements List only.	LinkedList class can act as a list and queue both because it implements List and Deque interfaces.
+4) ArrayList is better for storing and accessing data.	LinkedList is better for manipulating data.
+
+
+import java.util.*;    
+class TestArrayLinked{    
+ public static void main(String args[]){    
+     
+  List<String> al=new ArrayList<String>();//creating arraylist    
+  al.add("Ravi");//adding object in arraylist    
+  al.add("Vijay");    
+  al.add("Ravi");    
+  al.add("Ajay");    
+    
+  List<String> al2=new LinkedList<String>();//creating linkedlist    
+  al2.add("James");//adding object in linkedlist    
+  al2.add("Serena");    
+  al2.add("Swati");    
+  al2.add("Junaid");    
+    
+  System.out.println("arraylist: "+al);  
+  System.out.println("linkedlist: "+al2);  
+ }    
+}    
+
+
+List Interface is the subinterface of Collection. It contains index-based methods to insert and delete elements. It is a factory of ListIterator interface.
+
+ListIterator Interface is used to traverse the element in a backward and forward direction.
+
+Java HashSet class is used to create a collection that uses a hash table for storage. It inherits the AbstractSet class and implements Set interface.
+
+Java ArrayList class uses a dynamic array for storing the elements. It inherits AbstractList class and implements List interface.
+
+The important points about Java ArrayList class are:
+
+Java ArrayList class can contain duplicate elements.
+Java ArrayList class maintains insertion order.
+Java ArrayList class is non synchronized.
+Java ArrayList allows random access because array works at the index basis.
+In Java ArrayList class, manipulation is slow because a lot of shifting needs to occur if any element is removed from the array list.
+
+
+
+Java LinkedHashSet class is a Hashtable and Linked list implementation of the set interface. It inherits HashSet class and implements Set interface.
+
+The important points about Java LinkedHashSet class are:
+
+Java LinkedHashSet class contains unique elements only like HashSet.
+Java LinkedHashSet class provides all optional set operation and permits null elements.
+Java LinkedHashSet class is non synchronized.
+Java LinkedHashSet class maintains insertion order.
+
+
+
+Generic programming enables the programmer to create classes,interfaces and methods in which type of data is specified as a parameter
+
+Generics also provide type safety.
+
+Syntax for creating an object of a generic type
+Class_name <data type> reference_name = new Class_name<data type> ();
+OR
+Class_name <data type> reference_name = new Class_name<>();
+
+Generics work only with objects i.e the type argument must be a class type.You cannot use primitive datatypes such as int, char etc. with Generics type. It should always be an object. We can use all the Wrapper Class objects and String class objects as Generic type.
+
+Most Commonly thrown Exceptions in Collections Framework
+Exception Name	Description
+UnSupportedOperationException	occurs if a Collection cannot be modified
+ClassCastException	occurs when one object is incompatible with another
+NullPointerException	occurs when you try to store null object in Collection
+IllegalArgumentException	thrown if an invalid argument is used
+IllegalStateException	thrown if you try to add an element to an already full Collection
+
+https://www.studytonight.com/java/collection-classes.php
+

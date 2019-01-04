@@ -1,0 +1,23 @@
+@charset "ISO-8859-1";
+
+
+
+.images{
+	
+	padding-top: 10%;
+	padding-bottom:0%;
+	height: 10%;	
+}
+
+form{
+	 padding:20px 15px;
+ }
+ 
+form label{
+	 display:block;
+ } 
+ 
+form input{
+	 padding:8px;
+	 width=100%;
+ }

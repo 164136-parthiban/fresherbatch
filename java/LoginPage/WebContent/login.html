@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Login page</title>
+</head>
+<body>
+
+<style>
+
+  body{
+ background-color:grey;
+  box-sizing:border-box;
+ }
+ 
+
+ .myform{
+	 padding:20px 15px;
+	 width:100%;
+	  box-sizing:border-box;
+ }
+ 
+	.myform label{
+	 display:block;
+	 width:100%;
+	  box-sizing:border-box;
+ } 
+ 
+ .myform input{
+	 padding:8px;
+	 width=100%;
+	  box-sizing:border-box;
+ }
+ 
+
+ 
+</style>
+
+<form action="/LoginPage/login" method="post">  
+  
+Name:<input type="text" name="userName"/><br/><br/>  
+Password:<input type="password" name="userPass"/><br/><br/>  
+Email Id:<input type="text" name="userEmail"/><br/><br/>  
+Country:  
+<select name="userCountry">  
+<option>India</option>  
+<option>Pakistan</option>  
+<option>other</option>  
+</select>  
+  
+<br/><br/>  
+<input type="submit" value="register"/>  
+  
+</form> 
+
+</body>
+</html>

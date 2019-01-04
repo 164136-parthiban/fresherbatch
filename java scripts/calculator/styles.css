@@ -1,0 +1,25 @@
+.container {
+background-color:grey;
+height:200px;
+width:250px;
+border-radius:10px;
+float:relative;
+top:80px;
+left:40%;
+}
+
+.operator {
+	margin: 2px 2px 6px 2px;
+	color: red;
+	background-color: blue;
+	border:2px solid;
+	border-radius:80%;
+}
+
+.number {
+	margin: 2px 2px 6px 2px;
+	color: white;
+	background-color: black;
+	border:2px solid;
+	border-radius:80%;
+}

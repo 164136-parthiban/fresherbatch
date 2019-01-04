@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" 
+"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+
+<bean id="customer" class="com.parthi.spring.SetterInjectionDemo.CustomerBean">
+    <property name="customerName" value="Parthi" />
+    <property name="customerId" value="1"/>
+	<property name="customerContact" value="9739220198"/>
+	<property name="customerAddress" ref="address"/>
+</bean>
+
+<bean id="address" class="com.parthi.spring.SetterInjectionDemo.AddressBean">
+	<property name="street" value="Vinayaka Street"/>
+	<property name="city" value="Bangalore"/>
+	<property name="zip" value="560066"/>
+	<property name="country" value="India"/>
+	<property name="state" value="Karnataka"/>
+</bean>
+
+
+</beans>

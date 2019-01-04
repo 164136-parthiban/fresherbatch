@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+
+<title>Pizza!!</title>
+
+<link rel='stylesheet' type = 'text/css' href = 'pizza.css'>
+
+</head>
+
+<body>
+
+<h1>Pizza Orders</h1>
+
+<div name='container'>
+
+<form name='calc' onsubmit='enSummary(); return false;'>
+
+NAME: <input type = 'text' name = 'uname' id = 'userid' required /><br/><br/>
+
+EMAIL:<input type = 'text' name = 'uemail' id = 'emailid' required /><br/><br/>
+
+<b>TOPPINGS (max. 2): </b><br/><br/>
+Extra Cheese:<input type = 'checkbox' name = 'extraCheese'  onclick='return keepCount()'/>&nbsp&nbsp
+Pepperoni:<input type = 'checkbox' name = 'pepperoni'  onclick='return keepCount()'/>&nbsp&nbsp
+Olives:<input type = 'checkbox' name = 'olives'  onclick='return keepCount()'/>&nbsp&nbsp
+Pepper:<input type = 'checkbox' name = 'pepper'  onclick='return keepCount()'/>&nbsp&nbsp
+Bacon:<input type = 'checkbox' name = 'bacon'  onclick='return keepCount()'/>&nbsp&nbsp
+Tomatoes:<input type = 'checkbox' name = 'tomatoes' onclick='return keepCount()'/> &nbsp&nbsp
+Mushrooms:<input type = 'checkbox' name = 'mushrooms' onclick='return keepCount()'/>&nbsp&nbsp
+<br><br/>
+
+<b>delivery options</b>&nbsp&nbsp
+
+Delivery: <input type = 'radio' name = 'delivery' id ='take' required />&nbsp&nbsp
+Pick-up: <input type = 'radio' name = 'delivery' id = 'take'/>&nbsp&nbsp
+
+<br/><br/>
+
+<b>Tip? </b><select>
+
+<option value = '15%'>15%</option>
+<option value = '20%'>20%</option>
+<option value = '25%'>25%</option>
+
+</select>
+<br/>
+
+<hr/><br>
+Address: <br>
+
+<textarea rows='10' cols='50' id = 'address'required/>
+</textarea><br><br>
+
+<input type ='submit' value = 'Submit'></button>&nbsp&nbsp&nbsp&nbsp
+<input type = 'reset' value='Reset'>&nbsp&nbsp&nbsp&nbsp
+<button name = 'nss' onclick='getSummary(); return false;' id ='ss' disabled>Show Summary</button>
+	</form>
+	</div>
+	
+	<p id = 'd'></p>
+	<p id = 'de'></p>
+
+	<script src="pizza.js">
+
+	</script>
+</body>
+
+</html>

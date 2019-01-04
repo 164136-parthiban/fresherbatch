@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+<title> body mass </title>
+</head>
+<body>
+
+<script>
+
+var mark={name:'mark',mass:'10',height:'30',
+          bmi1:function()
+		  {
+             mbmi=mark.mass/(mark.height*mark.height);
+			 return mbmi;
+           }};
+		   
+var john={name:'john',mass:'10',height:'20',
+          bmi2:function()
+		  {
+             jbmi=john.mass/(john.height*john.height);
+			 return jbmi;
+           }};
+		   
+if(mark.bmi1()>john.bmi2())
+{
+   console.log(mark.name+" has bmi of "+mark.bmi1());
+   document.write(mark.name+" has bmi of "+mark.bmi1());
+}
+else
+{
+  console.log(john.name+" has bmi of "+john.bmi2());
+  document.write(john.name+" has bmi of "+john.bmi2());
+}
+
+</script>
+</body>
+</html>
+				   

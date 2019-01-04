@@ -1,0 +1,55 @@
+<html>
+
+<head>
+<title>counter</title>
+</head>
+
+<body>
+
+<script>
+
+var num= new Array(3);
+var temp= new Array(3);
+var i,j;
+
+for(i=0;i<3;i++)
+{ 
+  temp[i]=prompt("enter a number","enter");
+}
+
+for(i=0;i<3;i++)
+{  
+ if((temp[i]>1)&&(temp[i]<30))
+  {
+     num[i]=temp[i];
+  }
+ 
+ else
+  {
+   document.write("enter a valid integer between 1 to 30");
+   num[i]=prompt("enter a number","enter");
+  }
+ 
+}
+
+for(i=0;i<3;i++)
+    {
+ 
+     for(j=0;j<num[i];j++)
+     {
+      document.write("*");
+     }
+      
+	  document.write("<br/>");
+   }
+
+
+
+
+
+</script>
+
+</body>
+</html>
+   
+

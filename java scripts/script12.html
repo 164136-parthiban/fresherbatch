@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+<title>tip calc</title>
+</head>
+
+<body>
+
+<h1> tip calc</h1>
+<br/>
+
+<script>
+
+var amt= { bill:new Array(124,48,268,180,42)};
+ var tip = new Array(5);
+ var finalAmt = new Array(5);
+ var i;
+
+function tipAmt()
+{
+for(i=0;i<5;i++)
+{
+ if(amt.bill[i]<50)
+ {
+  tip[i]=amt.bill[i]*0.2;
+ }
+ else if((amt.bill[i]>50)&&(amt.bill[i]<200))
+ {
+  tip[i]=amt.bill[i]*0.15;
+ }
+ else if(amt.bill[i]>200)
+ {
+  tip[i]=amt.bill[i]*.1;
+ }
+}
+
+for(i=0;i<5;i++)
+{
+ document.write("<br/> tip paid in "+(i+1)+" hotel is "); 
+ document.write(tip[i]+"<br/>");
+}
+
+for(i=0;i<5;i++)
+{
+ finalAmt[i]=amt.bill[i]+tip[i];
+ document.write("<br/> amount paid in "+(i+1)+" hotel is "); 
+ document.write(finalAmt[i]+"<br/>");
+}
+
+}	
+	
+tipAmt();
+
+</script>
+
+</body>
+</html>       

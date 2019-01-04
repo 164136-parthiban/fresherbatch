@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+    "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+    
+    <beans>
+    
+    	<bean id="bankAccount1" class="com.parthi.spring.AutoWireDemo.BankAccount" scope="prototype">
+    <constructor-arg index="0" value="1"/>
+      <constructor-arg index="1" value="Parthi"/>
+        <constructor-arg index="2" value="Saving"/>
+          <constructor-arg index="3" value="20000"/>
+         
+    </bean>
+    
+    <bean id="bankAccount2" class="com.parthi.spring.AutoWireDemo.BankAccount" scope="prototype">
+    <constructor-arg index="0" value="2"/>
+      <constructor-arg index="1" value="Sneha"/>
+        <constructor-arg index="2" value="Saving"/>
+          <constructor-arg index="3" value="30000"/>
+         
+    </bean>
+    
+    <bean id="bankAccountRepositoryImpl" class="com.parthi.spring.AutoWireDemo.BankAccountRepositoryImpl">
+  	<property name="accounts">
+  	<list>
+  	<ref bean="bankAccount1"></ref>
+  	<ref bean="bankAccount2"></ref>
+  	</list>
+  	</property>
+  	
+    </bean>
+    
+    <bean id="bankAccountServiceImpl" class="com.parthi.spring.AutoWireDemo.BankAccountServiceImpl">
+  	<constructor-arg ref="bankAccountRepositoryImpl"/>
+    </bean>
+    
+     <bean id="bankAccountController" class="com.parthi.spring.AutoWireDemo.BankAccountController">
+  	<constructor-arg ref="bankAccountServiceImpl"/>
+    </bean>
+    </beans>

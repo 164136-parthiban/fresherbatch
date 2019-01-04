@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" 
+"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+
+<bean id="question" class="com.parthi.spring.CollectionsInjectionDemo.QuestionsBean">
+
+<property name="questionId" value="1" ></property>
+<property  name="question" value="Spring advantages?"></property>
+<property name="answers">
+     <list>
+      <value>Simplifies coding</value>
+      <value>wider scope</value>
+      <value>Reusability</value>
+     </list>
+   </property>
+ 
+ <property name="answerSet">
+     <set>
+      <value>Simplifies coding</value>
+      <value>wider scope</value>
+      <value>Reusability</value>
+     </set>
+   </property>
+   
+ <property name="answerMap">
+      <map>
+            <entry key = "1" value = "Simplifies coding"/>
+            <entry key = "2" value = "wider scope"/>
+            <entry key = "3" value = "Reusability"/>
+         </map>
+   </property>
+</bean>
+</beans>

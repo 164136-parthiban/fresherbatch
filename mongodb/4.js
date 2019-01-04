@@ -1,0 +1,1 @@
+db.zipcodes.aggregate([{$group: {_id : "$city", count: { $sum: 1 }}}]);

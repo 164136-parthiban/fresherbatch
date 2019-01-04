@@ -1,0 +1,117 @@
+
+<html>
+<head>
+<title>employee details</title>
+<link rel="stylesheet" type="text/css" href="style/style.css">
+</head>
+
+<body>
+
+
+
+
+<div class="para4">
+
+    <label>Name:</label>
+    <input type="text"  id="name"  required />
+	<br/>
+	 <label>id:</label>
+    <input type="number"  id="empid" required  />
+    <br/>
+	<label>salary:</label>
+    <input type="number" id="sal" required  />
+	<br/>
+	<label>address:</label>
+    <input type="text"  id="add" required  />
+    <br/>
+    <label>mobno:</label>
+    <input type="number" id="mobno" required  />
+	<br/>
+	<label>city:</label>
+    <input type="text"  id="city" required  />
+	<br/>
+	<label>pincode:</label>
+    <input type="number"  id="pincode" required  />
+	<br/>
+	<label>email:</label>
+    <input type="email"  id="email" required  />
+
+    <br/>
+
+    <input type="submit" value="Submit" onClick="empdetails()"/>
+	
+
+
+</div>	
+
+
+<script>
+
+
+
+   
+  function empdetails()
+  { 
+  
+   
+   var empname = document.getElementById("name");
+   var empid = document.getElementById("empid");
+   var sal = document.getElementById("sal");
+   var add = document.getElementById("add");
+   var mobno = document.getElementById("mobno");
+   var city = document.getElementById("city");
+   var pincode = document.getElementById("pincode");
+   var email = document.getElementById("email");
+ 
+
+
+  localStorage.setItem("emp_name", empname.value);
+  localStorage.setItem("emp_id", empid.value);
+  localStorage.setItem("salary", sal.value);
+  localStorage.setItem("address", add.value);
+  localStorage.setItem("mobno", mobno.value);
+  localStorage.setItem("city", city.value);
+  localStorage.setItem("pincode", pincode.value);
+  localStorage.setItem("email", email.value);
+  
+  document.write("employee name :" +localStorage.getItem("emp_name"));
+  document.write("<br/> employee id :" +localStorage.getItem("emp_id"));
+  document.write("<br/> employee salary :" +localStorage.getItem("salary"));
+  document.write("<br/> employee address :" +localStorage.getItem("address"));
+  document.write("<br/> employee mob.no :" +localStorage.getItem("mobno"));
+  document.write("<br/> employee city :" +localStorage.getItem("city"));
+  document.write("<br/> employee pincode :" +localStorage.getItem("pincode"));
+  document.write("<br/> employee email :" +localStorage.getItem("email"));
+  
+  document.write("<br/> <br/> after removing email, mobileno data <br/> <br/>");
+  localStorage.removeItem("email");
+  localStorage.removeItem("mobno");
+  
+  document.write("employee name :" +localStorage.getItem("emp_name"));
+  document.write("<br/> employee id :" +localStorage.getItem("emp_id"));
+  document.write("<br/> employee salary :" +localStorage.getItem("salary"));
+  document.write("<br/> employee address :" +localStorage.getItem("address"));
+  document.write("<br/> employee mob.no :" +localStorage.getItem("mobno"));
+  document.write("<br/> employee city :" +localStorage.getItem("city"));
+  document.write("<br/> employee pincode :" +localStorage.getItem("pincode"));
+  document.write("<br/> employee email :" +localStorage.getItem("email"));
+  
+  document.write("<br/> <br/> after clearing local storage <br/> <br/>");
+  localStorage.clear();
+  
+  document.write("<br/> employee name :" +localStorage.getItem("emp_name"));
+  document.write("<br/> employee id :" +localStorage.getItem("emp_id"));
+  document.write("<br/> employee salary :" +localStorage.getItem("salary"));
+  document.write("<br/> employee address :" +localStorage.getItem("address"));
+  document.write("<br/> employee mob.no :" +localStorage.getItem("mobno"));
+  document.write("<br/> employee city :" +localStorage.getItem("city"));
+  document.write("<br/> employee pincode :" +localStorage.getItem("pincode"));
+  document.write("<br/> employee email :" +localStorage.getItem("email")); 
+  
+ 
+	
+  }
+  
+</script>
+</body>
+</html>
