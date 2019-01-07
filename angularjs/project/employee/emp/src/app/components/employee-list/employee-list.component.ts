@@ -9,6 +9,8 @@ import { IEmployee } from 'src/app/iemployee';
 })
 export class EmployeeListComponent implements OnInit {
   
+  ename:String;
+
   employee:IEmployee[]=[
     {
       empId:"E164136",
@@ -29,7 +31,9 @@ export class EmployeeListComponent implements OnInit {
     }
   ]
 
-  constructor() { }
+  constructor() {
+    this.ename="parthi";
+   }
 
   ngOnInit() {
   }

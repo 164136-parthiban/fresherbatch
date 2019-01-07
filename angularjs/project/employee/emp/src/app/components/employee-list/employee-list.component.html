@@ -1,20 +1,41 @@
 <h4>Employee Detail</h4>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<h1>welcome {{ename}}</h1>
+
+
+   Ename:<input [(ngModel)]="ename"> 
+   <br>
+   <br>
+
 
 <div>
-<ul>
-  <li>id:{{employee[0].empId}}</li>
-  <li>name:{{employee[0].name}}</li>
-  <li>email:{{employee[0].email}}</li>
-  <li>phone:{{employee[0].phone}}</li>
-</ul>
-<br>
-<br>
-<ul>
-  <li>id:{{employee[1].empId}}</li>
-  <li>name:{{employee[1].name}}</li>
-  <li>email:{{employee[1].email}}</li>
-  <li>phone:{{employee[1].phone}}</li>
-</ul>
+  <form >
+  <table border="20px" aria-busy="true" >
+    <tr>
+    <td>EmpId</td><br>
+    <td>Name</td><br>
+    <td>Email</td><br>
+    <td>Phone</td><br>
+    <td>Salary</td><br>
+    <td>Appraisal Rating</td><br>
+    </tr>
+    <tr *ngIf="!employee || employee.length==0">  
+        <td colspan="5">  
+            No employees to display  
+        </td>  
+    </tr>
+    
+    <tr *ngFor="let emp of employee"> 
+        
+        <td>{{emp.empId}}</td><br>
+        <td>{{emp.name|uppercase}}</td><br>
+        <td>{{emp.email|lowercase}}</td><br>
+        <td>{{emp.phone}}</td><br>
+        <td>{{emp.salary}}</td><br>
+        <td>{{emp.appraisalRating|number}}</td><br>
+    </tr>
+
+   
+
+  </table>
+</form>
 </div>
