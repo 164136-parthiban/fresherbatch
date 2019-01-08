@@ -42,25 +42,19 @@
             <tbody>
                 <tr *ngFor='let emp of employee | empsearch:listFilter'>
                     <td>
-                        <img *ngIf='showImage'
+                            <img *ngIf='showImage'
                              [src]='emp.imageUrl'
                              [title]='emp.name | uppercase'
                              [style.width.px]='imageWidth' 
                              [style.margin.px]='imageMargin'>
-                    </td>
-                    <td><a [routerLink]="['/emp', emp.empId]">
-                        {{product.productName}}
-                        </a>
                     </td>
                     <td>{{ emp.name | lowercase }}</td>
                     <td>{{ emp.empId }}</td>
                     <td>{{ emp.email }}</td>
                     <td>{{ emp.phone }}</td>
                     <td>{{ emp.salary| currency:'USD':true:'1.2-2' }}</td>
-                    <td>
-                        <ai-star [rating]='emp.appraisalRating'
-                                (ratingClicked)='onRatingClicked($event)'>
-                        </ai-star>
+                    <td (ratingClicked)='onRatingClicked($event)'>{{emp.appraisalRating}}
+                                
                    </td>
                 </tr>
             </tbody>
