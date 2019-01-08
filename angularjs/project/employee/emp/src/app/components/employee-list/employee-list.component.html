@@ -1,9 +1,9 @@
 <div class='panel panel-primary'>
     <div class='panel-heading'>
-       Employee Details
+      <strong> Employee Details </strong>
     </div>
 
-
+<br>
 <div class='panel-body'>
     <div class='row'>
         <div class='col-md-2'>Filter by:</div>
@@ -19,6 +19,7 @@
 
 
     <div class='has-error' *ngIf='errorMessage'>{{errorMessage}}</div>
+<br>
 
     <div class='table-responsive'>
         <table class='table'
@@ -48,9 +49,9 @@
                              [style.width.px]='imageWidth' 
                              [style.margin.px]='imageMargin'>
                     </td>
-                    <td>{{ emp.name | lowercase }}</td>
+                    <td>{{ emp.name | uppercase }}</td>
                     <td>{{ emp.empId }}</td>
-                    <td>{{ emp.email }}</td>
+                    <td>{{ emp.email | lowercase }}</td>
                     <td>{{ emp.phone }}</td>
                     <td>{{ emp.salary| currency:'USD':true:'1.2-2' }}</td>
                     <td (ratingClicked)='onRatingClicked($event)'>{{emp.appraisalRating}}
