@@ -1,0 +1,34 @@
+	<ul>  
+		<li *ngFor="let data of studentList">  
+	   <a [routerLink]="['/student/',data.id]"> {{data.name}}</a>  
+	  </li>  
+	</ul>  
+	
+
+<body> 
+  <app-student-count [totalStudentsCount]="getTotalStudentsCount()"  [maleStudentsCount]="getMaleStudentsCount()" [femaleStudentsCount]="getFemaleStudentsCount()"> </app-student-count>  
+  	    <hr>  
+        	<div class="container">  
+           	        <b>Enter Name :</b> <input type="text" [(ngModel)]="searchText"><br/> 
+					   <table class="table table-sm">  
+					   <thead>  
+	                <tr>  
+ 	                    <th scope="col">Id</th>  
+                     <th scope="col">Name</th>  
+                        <th scope="col">Address</th>  
+    	                    <th scope="col">Gender</th>  
+                 </tr>  
+                </thead>  
+                <tbody>  
+   	               
+    	                <tr *ngFor="let student of students| namefilterpipe : searchText">  
+   	                    <th scope="row">{{student.Id}}</th>  
+  	                    <td>{{student.Name}}</td>  
+    	                    <td>{{student.Address}}</td>  
+    	                    <td>{{student.Gender}}</td>  
+   	                </tr>  
+   	            </tbody>  
+    	        </table>  
+   	    </div>  
+ 	</body>  
+    

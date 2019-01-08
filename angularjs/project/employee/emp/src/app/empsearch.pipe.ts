@@ -7,9 +7,10 @@ import { empty } from 'rxjs';
 })
 export class EmpsearchPipe implements PipeTransform {
 
-  transform(value: String, args:IEmployee[]): number {
-    if(value.toLowerCase.name=="parthiban")
-    return 50;
+  transform(value: IEmployee[], filterBy: string): IEmployee[] {
+    filterBy = filterBy ? filterBy.toLocaleLowerCase() : null;
+    return filterBy ? value.filter((emp: IEmployee) =>
+       emp.name.toLocaleLowerCase().indexOf(filterBy) !== -1) : value;
   }
 
 }

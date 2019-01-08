@@ -1,0 +1,38 @@
+	<input type="button" on-click='togglevisibilty()' value="Show / Hide Button">  
+	<div *ngIf='showdiv'> </div> {{showdiv==true?sampletext:"Hello"}}  
+
+ 
+  
+  	<table class= "table" border="0">  
+    	    <thead>
+            <th>Sr.No</th>
+	          <th>Player Name</th>  
+   	        <th>Batting style</th>  
+  	        <th>ODI Hundreds</th>  
+   	        <th>Test Hundreds</th>  
+  	    </thead>  
+   	    <tbody *ngFor='let c of cricketers let i = index let even=even,let odd=odd let first=first,let last=last' [ngClass]={first:first,odd:odd,even:even,last:last}>  
+                  <td>{{i+1}}</td>  
+          	        <td>{{c.name}}</td>  
+          	        <td>{{c.BattingStyle}}</td>  
+          	        <td>{{c.ODI}}</td>  
+                  <td>{{c.Test}}</td>  
+           
+      </tbody> 
+      </table> 
+    
+      	<select (change)='checkChangedValue($event.target.value)'>  
+       	  <option value="none" selected>Select</option>  
+         	<option value="SG">Sourav</option>  
+        	<option value="ST">Sachin</option>  
+         	<option value="RD">Rahul</option>  
+         </select>
+
+         	<div [ngSwitch]="Playerselection">  
+               <p *ngSwitchCase="'SG'">Sourav selected</p>  
+               <p *ngSwitchCase="'ST'">Sachin selected</p>  
+           	   <p *ngSwitchCase="'RD'">Rahul selected</p>  
+            	 <p *ngSwitchDefault>NO player selected</p>  
+           	</div>  
+             
+          
